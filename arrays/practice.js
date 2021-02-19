@@ -301,21 +301,14 @@ function both(arr1,arr2) {
       };
     };
     return aggregator;
-  } else if (arr1.length>arr2.length) {
+  } else if (arr1.length>arr2.length || arr1.length===arr2.length) {
     for (i=0; i<arr2.length; i++) {
       if (arr1.includes(arr2[i])) {
         aggregator.push(arr2[i]);
       };
     };
     return aggregator;
-  } else {
-    for (i=0; i<arr2.length; i++) {
-      if (arr1.includes(arr2[i])) {
-        aggregator.push(arr2[i]);
-      };
-    };
-    return aggregator;
-  }
+  } 
 }
 
 ////////// PROBLEM 12 //////////
