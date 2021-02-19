@@ -127,13 +127,12 @@ contains(names, 'Colt', function(result){
 
 //Code Here
 
-function uniq (array,cb) {
-  var outputArray= [];
-  for (i=0; i<array.length; i++) {
-    if (outputArray.includes(array[i])){}  
-  else if (outputArray.includes(array[i])===false){
-    outputArray.push(array[i]);
-  };
+function uniq(array, cb) {
+  var outputArray = [];
+  for (i = 0; i < array.length; i++) {
+    if (outputArray.includes(array[i])) {} else if (outputArray.includes(array[i]) === false) {
+      outputArray.push(array[i]);
+    };
   };
   return cb(outputArray);
 };
@@ -155,8 +154,8 @@ uniq(names, function(uniqArr){
 
 //Code Here 
 
-function each(array,cb) {
-  for (i=0; i<array.length; i++) {
+function each(array, cb) {
+  for (i = 0; i < array.length; i++) {
     cb(array[i], i);
   }
 }

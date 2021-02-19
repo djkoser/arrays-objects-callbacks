@@ -16,10 +16,10 @@
 
 //Code here
 
-let me={
-  name:"David Koser", 
+let me = {
+  name: "David Koser",
   age: 28
-}; 
+};
 alert(me.name);
 
 ////////// PROBLEM 2 //////////
