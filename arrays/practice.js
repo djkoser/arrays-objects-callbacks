@@ -138,7 +138,7 @@ function divider(numbersArray){
     return outputArray;
 };
 
-
+var numbers = divider(numbersArray);  
 
 ////////// PROBLEM 7 //////////
 
@@ -193,15 +193,27 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Code Here
 
 function removeItem(myGroceryList, toRemove) {
-  if (myGroceryList.includes(toRemove)) {
-    myGroceryList.splice(myGroceryList.toRemove,1);
-    return myGroceryList;
-  }else if (toRemove==null) {
-    return [];
-  }
-  else{
-    return myGroceryList;
-  }
+  if (toRemove!=null && myGroceryList!=null) {
+    var outputArray = myGroceryList.slice();
+    for (i=0; i<outputArray.length; i++) {
+      if (outputArray[i]===toRemove) {
+        outputArray.splice(i,1);
+      }; 
+    }; 
+    return outputArray;
+   } else {
+      return [];
+   }
+  }; 
+
+function addItem (myGroceryList, toAdd) {
+  if (toAdd != null && myGroceryList != null) {
+    var outputArray = myGroceryList.slice();
+    outputArray.push(toAdd); 
+    return outputArray;
+  } else{
+    return []; 
+  }; 
 };
 
 ////////// PROBLEM 9 //////////
@@ -212,7 +224,13 @@ function removeItem(myGroceryList, toRemove) {
 
 //Code Here
 
-
+function maker() {
+  var aggregator = []; 
+  for (i=1; i<216; i++) {
+    aggregator.push(i);
+  };
+  return aggregator;
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -228,7 +246,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   
 //Code Here
 
-
+function addTen(numbers) {
+  var aggregator = [];
+  for (i=0; i<numbers.length; i++) {
+    aggregator.push(parseInt(numbers[i])+10);
+  }
+  return aggregator;
+}
 
 ////////// PROBLEM 11 //////////
 
@@ -253,6 +277,10 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
+function longer(arr1,arr2){
+  return arr1.length>arr2.length ? arr1 : arr2; 
+};
+
 
 
 /*
@@ -265,7 +293,31 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
-
+function both(arr1,arr2) {
+  var aggregator = [];
+  if (arr1.length>arr2.length) {
+    for (i=0; i<arr1.length; i++) {
+      if (arr2.includes(arr1[i])) {
+        aggregator.push(arr1[i]);
+      };
+    };
+    return aggregator;
+  } else if (arr1.length>arr2.length) {
+    for (i=0; i<arr2.length; i++) {
+      if (arr1.includes(arr2[i])) {
+        aggregator.push(arr2[i]);
+      };
+    };
+    return aggregator;
+  } else {
+    for (i=0; i<arr2.length; i++) {
+      if (arr1.includes(arr2[i])) {
+        aggregator.push(arr2[i]);
+      };
+    };
+    return aggregator;
+  }
+}
 
 ////////// PROBLEM 12 //////////
 
@@ -316,7 +368,17 @@ console.log(devMountainEmployees.length);
 
 //Code Here
 
+function findAndRemove(array,toRemove) {
+  for (i=0; i<array.length; i++) {
+    if (array[i].name===toRemove) {
+      return array.splice(i,1);
+    }else if (i>=array.length){
+      return array;
+    }
+  }
+}
 
+findAndRemove(devMountainEmployees, "Cahlan"); 
 
 ////////// PROBLEM 13 //////////
 
@@ -329,6 +391,7 @@ console.log(devMountainEmployees.length);
 //Code Here
 
 
+var users = [];
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties: name, email, password, username.
@@ -348,8 +411,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Bob',
+  email: 'mark.mciver@devmounta.in',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
 
+var user3 = {
+  name: 'Joe',
+  email: 'mark.mciver@devmounta.in',
+  password: 'hunter2',
+  username: 'ihazcode'
+};
 
+users = (user1,user2,user3);
 
 /*
   Now you have a very common data structure. 
@@ -363,6 +439,7 @@ var user1 = {
 
 //Code Here
 
+findAndRemove(users,"Mark McIver");
 
 
 /*
