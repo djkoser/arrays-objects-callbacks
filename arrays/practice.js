@@ -194,13 +194,12 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 function removeItem(myGroceryList, toRemove) {
   if (toRemove!=null && myGroceryList!=null) {
-    var outputArray = myGroceryList.slice();
-    for (i=0; i<outputArray.length; i++) {
-      if (outputArray[i]===toRemove) {
-        outputArray.splice(i,1);
+    for (i=0; i<myGroceryList.length; i++) {
+      if (myGroceryList[i]===toRemove) {
+        myGroceryList.splice(i,1);
       }; 
     }; 
-    return outputArray;
+    return myGroceryList;
    } else {
       return [];
    }
@@ -208,13 +207,13 @@ function removeItem(myGroceryList, toRemove) {
 
 function addItem (myGroceryList, toAdd) {
   if (toAdd != null && myGroceryList != null) {
-    var outputArray = myGroceryList.slice();
-    outputArray.push(toAdd); 
-    return outputArray;
+    myGroceryList.push(toAdd); 
+    return myGroceryList;
   } else{
     return []; 
   }; 
 };
+ 
 
 ////////// PROBLEM 9 //////////
 
